@@ -16,6 +16,10 @@ export const Row = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
+
+    & Button {
+        margin: 5px;
+    }
 `;
 
 export const Wrapper = styled.div`
