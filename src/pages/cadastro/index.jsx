@@ -22,6 +22,25 @@ const Cadastro = () => {
         mode: 'onChange'
     })
 
+    const onSubmit = async formData  => {
+        try {
+            await api.post("/users", {
+                nome: formData.name,
+                email: formData.email,
+                senha: formData.password
+
+            })
+            .then(respose => {
+                console.log(respose)
+                navigate("/login")
+            })
+            .then(error => console.error(error))
+            
+        } catch (error) {
+            console.log('erros ao enviar: ', error)
+        }
+    }
+
     return (
         <>
             <Header />
@@ -32,8 +51,8 @@ const Cadastro = () => {
                 <Column>
                     <TitleCadastro>Comece agora grátis</TitleCadastro>
                     <SubtitleCadastro>Crie sua conta e make the change._</SubtitleCadastro>
-                    <form onSubmit='' >
-                        <Input placeholder="Nome Completo" name="nomeCompleto" leftIcon={<MdPerson />} control={control} />
+                    <form onSubmit={handleSubmit(onSubmit)} >
+                        <Input placeholder="Nome Completo" name="name" leftIcon={<MdPerson />} control={control} />
                         <Input placeholder="E-mail" name="email" type="email" leftIcon={<MdEmail />} control={control} />
                         <Input placeholder="Senha" name="password" type="password" leftIcon={<MdLock />} control={control} />
                         <Button title="Cadastrar" type="submit" variant="second" />
