@@ -7,14 +7,14 @@ export const Container = styled.div`
     margin-top: 120px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: space-between;
 `
 
 export const Column = styled.div`
     flex: 1;
 
-    & form, & p {
+    & form {
         max-width: 300px;
     }
 `
@@ -37,6 +37,14 @@ export const Text = styled.p`
     font-size: 18px;
     font-weight: 400;
     margin: 25px 0;
+    max-width: 300px;
+`
+
+export const TextCadastro = styled.p`
+    font-size: 32px;
+    font-weight: 700;
+    text-align: left;
+    width: 400px;
 `
 
 export const LoginText = styled.p`

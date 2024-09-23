@@ -8,7 +8,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-import { Container, Column, TitleCadastro, SubtitleCadastro, Text, LoginText, LinkLogin} from "./styles";
+import { Container, Column, TitleCadastro, SubtitleCadastro, Text, LoginText, LinkLogin, TextCadastro} from "./styles";
 
 const Cadastro = () => {
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ const Cadastro = () => {
             <Header />
             <Container>
                 <Column>
-
+                    <TextCadastro>A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.</TextCadastro>
                 </Column>
                 <Column>
                     <TitleCadastro>Comece agora grátis</TitleCadastro>
