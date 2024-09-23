@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { MdEmail, MdLock, MdPerson } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 
@@ -10,6 +11,12 @@ import { Button } from "../../components/Button";
 import { Container, Column, TitleCadastro, SubtitleCadastro, Text, LoginText, LinkLogin} from "./styles";
 
 const Cadastro = () => {
+    const navigate = useNavigate();
+
+    const handleNavigateLogin = () => {
+        navigate("/login")
+    }
+
     const { control, handleSubmit, formState: { errors } } = useForm({
         reValidateMode: 'onChange',
         mode: 'onChange'
@@ -20,7 +27,7 @@ const Cadastro = () => {
             <Header />
             <Container>
                 <Column>
-                    
+
                 </Column>
                 <Column>
                     <TitleCadastro>Comece agora grátis</TitleCadastro>
@@ -32,7 +39,7 @@ const Cadastro = () => {
                         <Button title="Cadastrar" type="submit" variant="second" />
                     </form>
                     <Text>Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.</Text>
-                    <LoginText>Já tenho uma conta. <LinkLogin>Fazer login!</LinkLogin></LoginText>
+                    <LoginText>Já tenho uma conta. <LinkLogin onClick={handleNavigateLogin}>Fazer login!</LinkLogin></LoginText>
                 </Column>
             </Container>
         </>
