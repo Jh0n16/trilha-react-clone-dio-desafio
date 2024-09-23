@@ -37,7 +37,7 @@ const Cadastro = () => {
             .then(error => console.error(error))
             
         } catch (error) {
-            console.log('erros ao enviar: ', error)
+            console.log('erro ao enviar: ', error)
         }
     }
 
@@ -53,8 +53,14 @@ const Cadastro = () => {
                     <SubtitleCadastro>Crie sua conta e make the change._</SubtitleCadastro>
                     <form onSubmit={handleSubmit(onSubmit)} >
                         <Input placeholder="Nome Completo" name="name" leftIcon={<MdPerson />} control={control} />
+                        {errors.name && <span>O Nome é obrigatório</span>}
+
                         <Input placeholder="E-mail" name="email" type="email" leftIcon={<MdEmail />} control={control} />
+                        {errors.email && <span>O E-mail é obrigatório</span>}
+                        
                         <Input placeholder="Senha" name="password" type="password" leftIcon={<MdLock />} control={control} />
+                        {errors.password && <span>A senha é obrigatório</span>}
+
                         <Button title="Cadastrar" type="submit" variant="second" />
                     </form>
                     <Text>Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.</Text>

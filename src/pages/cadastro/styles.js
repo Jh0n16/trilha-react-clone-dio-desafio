@@ -9,6 +9,10 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: space-between;
+
+    & span {
+        color: #ff0000;
+    }
 `
 
 export const Column = styled.div`
